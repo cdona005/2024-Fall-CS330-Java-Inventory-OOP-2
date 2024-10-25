@@ -179,6 +179,13 @@ public class Tool extends Item {
     public void read(Scanner snr)
     {
         // Complete this method
+            this.name = snr.next();
+            this.material = snr.next();
+            this.durability = snr.nextInt();
+            this.speed = snr.nextInt();
+            this.modifier = snr.next();
+            this.modifierLevel = snr.nextInt();
+        
     }
 
     /**
@@ -205,7 +212,9 @@ public class Tool extends Item {
         Tool rhsItem = (Tool) rhs;
 
         // Replace the next line
-        
+        return this.name.equals(rhsItem.name) &&
+        this.material.equals(rhsItem.material) &&
+        this.modifier.equals(rhsItem.modifier);
     }
 
     /**
@@ -229,7 +238,6 @@ public class Tool extends Item {
         return String.format(
             "  Nme: %s%n  Dur: %d%n  Spd: %d%n  Mtl: %s%n  Mdr: %s (Lvl %d)%n",
             this.name, this.durability, this.speed, this.material,
-            this.modifier, this.modifierLevel
-        );
+            this.modifier, this.modifierLevel);
     }
 }
