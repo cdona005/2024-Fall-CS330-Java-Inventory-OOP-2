@@ -57,7 +57,13 @@ public class Tool extends Item {
      */
     public Tool(Tool src)
     {
+        super(src.name);
 
+        this.durability    = src.durability;
+        this.speed         = src.speed;
+        this.material      = src.material;
+        this.modifier      = src.modifier;
+        this.modifierLevel = src.modifierLevel;
     }
 
     /**
@@ -199,7 +205,7 @@ public class Tool extends Item {
         Tool rhsItem = (Tool) rhs;
 
         // Replace the next line
-        return false;
+        
     }
 
     /**
@@ -220,6 +226,10 @@ public class Tool extends Item {
     @Override
     public String toString()
     {
-        return "";
+        return String.format(
+            "  Nme: %s%n  Dur: %d%n  Spd: %d%n  Mtl: %s%n  Mdr: %s (Lvl %d)%n",
+            this.name, this.durability, this.speed, this.material,
+            this.modifier, this.modifierLevel
+        );
     }
 }
